@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="accent1">#F6F6F6</color>
+    <color name="accent2">#E8F5E9</color>
+    <color name="text_color">#C1BFBF</color>
+    <color name="ongoing">#fbe2de</color>
+    <color name="ondelivery">#e5d6eb</color>
+    <color name="complete">#c9e9e4</color>
+    <color name="accepted">#FFE8F5E9</color>
+    <color name="pending">#E3F2FD</color>
+    <color name="delivered">#FFCCBC</color>
+    <color name="cancelled">#FFCCBC</color>
+    <color name="declined">#FBE9E7</color>
+    <color name="completed">#E8F5E9</color>
+</resources>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".views.nav.inventory.productlisting.VariationBottomSheet">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Choose Action"
+        android:id="@+id/textVariationName"
+        android:textSize="18sp"
+        android:fontFamily="@font/poppins_semibold"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        android:id="@+id/actionEdit"
+        android:drawableLeft="@drawable/aedit"
+        android:textAlignment="textStart"
+        style="@style/Widget.Material3.Button.TextButton"
+        app:iconGravity="start"
+        app:iconPadding="8dp"
+    />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        android:id="@+id/actionDelete"
+        android:drawableLeft="@drawable/trash"
+        android:textAlignment="textStart"
+        style="@style/Widget.Material3.Button.TextButton"
+        app:iconGravity="start"
+        app:iconPadding="8dp"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stock In"
+        android:id="@+id/actionStockIn"
+        android:drawableLeft="@drawable/in"
+        android:textAlignment="textStart"
+        style="@style/Widget.Material3.Button.TextButton"
+        app:iconGravity="start"
+        app:iconPadding="8dp"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stock Out"
+        android:id="@+id/actionStockOut"
+        android:drawableLeft="@drawable/out"
+        android:textAlignment="textStart"
+        style="@style/Widget.Material3.Button.TextButton"
+        app:iconGravity="start"
+        app:iconPadding="8dp"
+        />
+
+</LinearLayout>

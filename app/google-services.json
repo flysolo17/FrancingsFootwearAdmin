@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "627644250888",
+    "project_id": "francing-s-footwear",
+    "storage_bucket": "francing-s-footwear.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:627644250888:android:3bec4225e61550805ccabd",
+        "android_client_info": {
+          "package_name": "com.ketchupzz.francingsfootwear"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIvwStoYRgtMlH-HETGwXDCNBphkYI-e4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:627644250888:android:3e88f9976fed7bea5ccabd",
+        "android_client_info": {
+          "package_name": "com.ketchupzz.francingsfootwearadmin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIvwStoYRgtMlH-HETGwXDCNBphkYI-e4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

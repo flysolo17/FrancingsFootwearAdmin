@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
+    tools:context=".views.nav.inventory.InventoryFragment">
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonCreateProduct"
+        android:layout_width="match_parent"
+        android:paddingVertical="16dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        app:cornerRadius="10dp"
+        android:text="@string/create_product"
+        android:textColor="@color/black"
+        app:icon="@drawable/baseline_add_circle_24"
+        app:iconTint="@color/black" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recyclerviewProducts"/>
+
+
+
+</LinearLayout>

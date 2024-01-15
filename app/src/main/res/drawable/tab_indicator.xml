@@ -1,0 +1,9 @@
+<!-- tab_indicator_circle.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:gravity="center">
+    <shape android:shape="oval">
+      <solid android:color="@color/black" />
+      <size android:width="12dp" android:height="12dp" /> <!-- Adjust the size as needed -->
+    </shape>
+  </item>
+</layer-list>

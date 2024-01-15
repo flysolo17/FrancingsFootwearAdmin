@@ -1,0 +1,27 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.FrancingsFootwearAdmin" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/black</item>
+        <item name="fontFamily">@font/poppins</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/accent1</item>
+        <!-- Set ActionBar text color -->
+        <item name="android:textColorPrimary">@android:color/white</item>
+
+        <!-- Set ActionBar icon color -->
+        <item name="colorControlNormal">@android:color/white</item>
+        <!-- Set Bottom Navigation Bar color -->
+        <item name="android:navigationBarColor">@color/black</item>
+
+        <!-- Set Status Bar color -->
+        <item name="android:statusBarColor">@color/black</item>
+    </style>
+
+    <style name="Theme.FrancingsFootwearAdmin" parent="Base.Theme.FrancingsFootwearAdmin" />
+
+    <style name="CornerCut" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+</resources>
