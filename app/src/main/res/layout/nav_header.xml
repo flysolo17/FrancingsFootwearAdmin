@@ -13,7 +13,7 @@
         android:layout_height="80dp"
         android:scaleType="centerCrop"
         android:id="@+id/imageProfile"
-        android:src="@drawable/product"
+        android:src="@drawable/profiles"
         />
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,18 +31,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textStudentID"
-            android:text="09857541247"
+            android:id="@+id/textEmail"
+            android:text="@string/juan_dela_cruz"
             style="@style/TextAppearance.AppCompat.Body1"
             android:textColor="@color/white"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/textCurrentEnrollment"
-            android:text="Grade Level"
-            android:fontFamily="@font/poppins_medium"
-            android:textSize="16sp"
-            android:textColor="@color/white"/>
     </LinearLayout>
 </LinearLayout>

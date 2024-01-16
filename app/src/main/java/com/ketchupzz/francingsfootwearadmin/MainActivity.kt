@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.navigation.NavController
@@ -12,9 +14,11 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.bumptech.glide.Glide
 import com.google.android.material.badge.BadgeDrawable
 import com.google.android.material.badge.BadgeUtils
 import com.google.android.material.badge.ExperimentalBadgeUtils
+import com.google.android.material.imageview.ShapeableImageView
 import com.google.firebase.auth.FirebaseAuth
 import com.ketchupzz.francingsfootwearadmin.utils.LoadingDialog
 import com.ketchupzz.francingsfootwearadmin.utils.UiState
@@ -96,6 +100,17 @@ class MainActivity : AppCompatActivity() {
                 is UiState.SUCCESS -> {
                     loadingDialog.closeDialog()
                     this.users  = it.data
+                    val headerView: View = binding.navigation.getHeaderView(0)
+                    val fullname: TextView = headerView.findViewById(R.id.textFullname)
+                    val profile: ShapeableImageView = headerView.findViewById(R.id.imageProfile)
+                    val textCurrentEnrollment: TextView = headerView.findViewById(R.id.textEmail)
+                    fullname.text = users?.name
+                    textCurrentEnrollment.text = users?.email
+                    Glide.with(this)
+                        .load(users?.profile)
+                        .error(R.drawable.profiles)
+                        .into(profile)
+
                 }
             }
         }
@@ -109,6 +124,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 is UiState.SUCCESS -> {
                     if (users != null) {
+
                         messageBadge.number = it.data.getNewMessages(users?.id ?: "")
                         invalidateOptionsMenu()
                     }
