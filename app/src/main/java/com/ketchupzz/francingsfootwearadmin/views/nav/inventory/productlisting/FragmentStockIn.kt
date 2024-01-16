@@ -11,7 +11,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.button.MaterialButton
-import com.ketchupzz.francingsfootwear.utils.LoadingDialog
+import com.ketchupzz.francingsfootwearadmin.utils.LoadingDialog
 import com.ketchupzz.francingsfootwearadmin.R
 import com.ketchupzz.francingsfootwearadmin.databinding.FragmentStockInBinding
 import com.ketchupzz.francingsfootwearadmin.model.products.Size

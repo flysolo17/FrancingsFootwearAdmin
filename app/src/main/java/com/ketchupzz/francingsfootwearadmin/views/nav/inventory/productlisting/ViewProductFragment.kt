@@ -9,17 +9,15 @@ import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
-import com.ketchupzz.francingsfootwear.utils.LoadingDialog
+import com.ketchupzz.francingsfootwearadmin.utils.LoadingDialog
 import com.ketchupzz.francingsfootwearadmin.R
 import com.ketchupzz.francingsfootwearadmin.databinding.FragmentViewProductBinding
 import com.ketchupzz.francingsfootwearadmin.model.products.Variation
 import com.ketchupzz.francingsfootwearadmin.utils.UiState
 import com.ketchupzz.francingsfootwearadmin.utils.getEffectiveProductPrice
 import com.ketchupzz.francingsfootwearadmin.viewmodels.VariationViewModel
-import com.ketchupzz.francingsfootwearadmin.views.nav.inventory.adapters.ProductAdapter
 import com.ketchupzz.francingsfootwearadmin.views.nav.inventory.adapters.VariationAdapter
 import com.ketchupzz.francingsfootwearadmin.views.nav.inventory.adapters.VariationClickListener
 

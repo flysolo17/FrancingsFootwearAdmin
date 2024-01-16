@@ -10,7 +10,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.ketchupzz.francingsfootwear.utils.LoadingDialog
+import com.ketchupzz.francingsfootwearadmin.utils.LoadingDialog
 import com.ketchupzz.francingsfootwearadmin.utils.UiState
 import com.ketchupzz.francingsfootwearadmin.databinding.FragmentChangePasswordBinding
 import com.ketchupzz.francingsfootwearadmin.viewmodels.AuthViewModel

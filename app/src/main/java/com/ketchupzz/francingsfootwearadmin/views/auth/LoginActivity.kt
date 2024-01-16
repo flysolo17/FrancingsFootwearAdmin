@@ -3,12 +3,11 @@ package com.ketchupzz.francingsfootwearadmin.views.auth
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.ketchupzz.francingsfootwearadmin.utils.LoadingDialog
 import com.ketchupzz.francingsfootwearadmin.utils.UiState
 import com.ketchupzz.francingsfootwearadmin.MainActivity
 import com.ketchupzz.francingsfootwearadmin.databinding.ActivityLoginBinding
@@ -20,12 +19,13 @@ import dagger.hilt.android.AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityLoginBinding
+    private lateinit var loadingDialog : LoadingDialog
     private val authViewModel by viewModels<AuthViewModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
+        loadingDialog = LoadingDialog(binding.root.context)
         setContentView(binding.root)
-        supportActionBar?.hide()
         binding.buttonLogin.setOnClickListener {
             val  email = binding.inputEmail.text.toString()
             val password = binding.inputPassword.text.toString()
@@ -52,22 +52,14 @@ class LoginActivity : AppCompatActivity() {
         authViewModel.login(email,password) {
             when(it) {
                 is UiState.FAILED -> {
-                    binding.progress.visibility = View.GONE
-                    binding.buttonLogin.isEnabled = true
-                    binding.buttonLogin.text = "Login"
-                    MaterialAlertDialogBuilder(binding.root.context)
-                        .setMessage(it.message)
-                        .show()
+
+
                 }
                 is UiState.LOADING -> {
-                    binding.progress.visibility = View.VISIBLE
-                    binding.buttonLogin.isEnabled = false
-                    binding.buttonLogin.text = "Logging in...."
+
                 }
                 is UiState.SUCCESS -> {
-                    binding.progress.visibility = View.GONE
-                    binding.buttonLogin.isEnabled = true
-                    binding.buttonLogin.text = "Login"
+
                     Toast.makeText(binding.root.context,"Successfully Logged in", Toast.LENGTH_SHORT).show()
                     updateUI(it.data)
 

@@ -1,4 +1,4 @@
-package com.ketchupzz.francingsfootwear.utils
+package com.ketchupzz.francingsfootwearadmin.utils
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -12,7 +12,7 @@ import com.ketchupzz.francingsfootwearadmin.R
 
 class LoadingDialog(private val context: Context) {
 
-    var alertDialog: AlertDialog ? = null
+    private var alertDialog: AlertDialog ? = null
     fun showDialog(title : String){
         val materialAlertDialogBuilder = MaterialAlertDialogBuilder(context)
         val view : View = LayoutInflater.from(context).inflate(R.layout.dialog_loading,null)

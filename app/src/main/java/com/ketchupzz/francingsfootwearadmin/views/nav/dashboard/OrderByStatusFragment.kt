@@ -9,8 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.ketchupzz.francingsfootwear.utils.LoadingDialog
-import com.ketchupzz.francingsfootwearadmin.R
+import com.ketchupzz.francingsfootwearadmin.utils.LoadingDialog
 import com.ketchupzz.francingsfootwearadmin.databinding.FragmentOrderByStatusBinding
 import com.ketchupzz.francingsfootwearadmin.model.transaction.TransactionStatus
 import com.ketchupzz.francingsfootwearadmin.model.transaction.Transactions

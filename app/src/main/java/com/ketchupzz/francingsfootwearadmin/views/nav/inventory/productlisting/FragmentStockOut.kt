@@ -9,9 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.ketchupzz.francingsfootwear.utils.LoadingDialog
-import com.ketchupzz.francingsfootwearadmin.R
-import com.ketchupzz.francingsfootwearadmin.databinding.FragmentStockInBinding
+import com.ketchupzz.francingsfootwearadmin.utils.LoadingDialog
 import com.ketchupzz.francingsfootwearadmin.databinding.FragmentStockOutBinding
 import com.ketchupzz.francingsfootwearadmin.model.products.Size
 import com.ketchupzz.francingsfootwearadmin.utils.UiState

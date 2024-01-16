@@ -9,7 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.ketchupzz.francingsfootwear.utils.LoadingDialog
+import com.ketchupzz.francingsfootwearadmin.utils.LoadingDialog
 import com.ketchupzz.francingsfootwearadmin.utils.UiState
 import com.ketchupzz.francingsfootwearadmin.databinding.FragmentUpdateAccountBinding
 import com.ketchupzz.francingsfootwearadmin.viewmodels.AuthViewModel

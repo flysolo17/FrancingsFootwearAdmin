@@ -8,8 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
-import com.ketchupzz.francingsfootwear.utils.LoadingDialog
-import com.ketchupzz.francingsfootwearadmin.R
+import com.ketchupzz.francingsfootwearadmin.utils.LoadingDialog
 import com.ketchupzz.francingsfootwearadmin.databinding.FragmentOrdersBinding
 import com.ketchupzz.francingsfootwearadmin.model.transaction.TransactionStatus
 import com.ketchupzz.francingsfootwearadmin.viewmodels.TransactionViewModel

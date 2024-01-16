@@ -8,11 +8,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.ketchupzz.francingsfootwear.utils.LoadingDialog
-import com.ketchupzz.francingsfootwearadmin.R
+import com.ketchupzz.francingsfootwearadmin.utils.LoadingDialog
 import com.ketchupzz.francingsfootwearadmin.databinding.FragmentCustomersBinding
-import com.ketchupzz.francingsfootwearadmin.model.customer.Customer
-import com.ketchupzz.francingsfootwearadmin.model.transaction.Transactions
 import com.ketchupzz.francingsfootwearadmin.utils.UiState
 import com.ketchupzz.francingsfootwearadmin.viewmodels.CustomersViewModel
 import com.ketchupzz.francingsfootwearadmin.viewmodels.TransactionViewModel

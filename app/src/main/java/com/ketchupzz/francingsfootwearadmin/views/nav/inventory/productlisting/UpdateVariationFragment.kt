@@ -14,23 +14,18 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.google.android.material.button.MaterialButton
-import com.ketchupzz.francingsfootwear.utils.LoadingDialog
+import com.ketchupzz.francingsfootwearadmin.utils.LoadingDialog
 import com.ketchupzz.francingsfootwearadmin.R
-import com.ketchupzz.francingsfootwearadmin.databinding.FragmentAddVariationBinding
 import com.ketchupzz.francingsfootwearadmin.databinding.FragmentUpdateVariationBinding
 import com.ketchupzz.francingsfootwearadmin.model.products.Size
 import com.ketchupzz.francingsfootwearadmin.model.products.Variation
 import com.ketchupzz.francingsfootwearadmin.utils.UiState
-import com.ketchupzz.francingsfootwearadmin.utils.generateRandomNumber
-import com.ketchupzz.francingsfootwearadmin.utils.getConsonants
 import com.ketchupzz.francingsfootwearadmin.utils.getImageTypeFromUri
 import com.ketchupzz.francingsfootwearadmin.viewmodels.VariationViewModel
-import com.ketchupzz.francingsfootwearadmin.views.nav.account.UpdateAccountFragmentArgs
 
 
 class UpdateVariationFragment : Fragment() {

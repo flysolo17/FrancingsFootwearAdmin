@@ -9,24 +9,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.ketchupzz.francingsfootwear.utils.LoadingDialog
+import com.ketchupzz.francingsfootwearadmin.utils.LoadingDialog
 import com.ketchupzz.francingsfootwearadmin.utils.UiState
 import com.ketchupzz.francingsfootwearadmin.R
 import com.ketchupzz.francingsfootwearadmin.databinding.FragmentCreateProductBinding
 import com.ketchupzz.francingsfootwearadmin.model.products.Product
-import com.ketchupzz.francingsfootwearadmin.model.products.Variation
 import com.ketchupzz.francingsfootwearadmin.utils.generateRandomNumber
 import com.ketchupzz.francingsfootwearadmin.utils.getImageTypeFromUri
 
-import com.ketchupzz.francingsfootwearadmin.viewmodels.InventoryViewModel
 import com.ketchupzz.francingsfootwearadmin.viewmodels.ProductViewModel
 
 

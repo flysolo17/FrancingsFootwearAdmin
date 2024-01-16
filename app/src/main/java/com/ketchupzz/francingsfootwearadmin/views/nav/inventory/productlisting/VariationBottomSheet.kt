@@ -1,7 +1,6 @@
 package com.ketchupzz.francingsfootwearadmin.views.nav.inventory.productlisting
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,16 +8,12 @@ import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.ketchupzz.francingsfootwear.utils.LoadingDialog
-import com.ketchupzz.francingsfootwearadmin.R
+import com.ketchupzz.francingsfootwearadmin.utils.LoadingDialog
 import com.ketchupzz.francingsfootwearadmin.databinding.FragmentVariationBottomSheetBinding
 import com.ketchupzz.francingsfootwearadmin.utils.UiState
-import com.ketchupzz.francingsfootwearadmin.utils.getEffectiveProductPrice
 import com.ketchupzz.francingsfootwearadmin.viewmodels.VariationViewModel
-import com.ketchupzz.francingsfootwearadmin.views.nav.inventory.adapters.VariationAdapter
 
 
 class VariationBottomSheet : BottomSheetDialogFragment() {
