@@ -101,6 +101,9 @@ class ProductsRepositoryImpl(private val firestore: FirebaseFirestore,private va
                 }
             }
     }
+
+
+
     private fun deleteSubcollections(collection: CollectionReference): Task<Void> {
 
         return collection.get().continueWithTask { querySnapshotTask ->

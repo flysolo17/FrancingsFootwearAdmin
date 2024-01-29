@@ -33,8 +33,8 @@ class VariationViewModel @Inject constructor(private val variationRepository: Va
     fun createVariation(productID: String,variation: Variation,result : (UiState<String>) -> Unit) {
         return variationRepository.createVariation(productID, variation, result)
     }
-    fun deleteVariation(productID: String,variationID : String,imageURL : String,result: (UiState<String>) -> Unit) {
-        return variationRepository.deleteVariation(productID, variationID, imageURL, result)
+    fun deleteVariation(productID: String,variationID : String,result: (UiState<String>) -> Unit) {
+        return variationRepository.deleteVariation(productID, variationID, result)
     }
     fun stockIn(productID: String,variationID : String,size: List<Size>,result: (UiState<String>) -> Unit) {
         return variationRepository.stockIn(productID, variationID, size, result)

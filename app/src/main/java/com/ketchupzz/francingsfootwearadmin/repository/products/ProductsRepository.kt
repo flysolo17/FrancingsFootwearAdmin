@@ -11,4 +11,5 @@ interface ProductsRepository {
     fun updateProduct(product: Product,result: (UiState<String>) -> Unit)
     fun deleteProduct(productID : String,result: (UiState<String>) -> Unit)
     fun getAllProduct(result: (UiState<List<Product>>) -> Unit)
+
 }

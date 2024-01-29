@@ -38,6 +38,7 @@ class VariationBottomSheet : BottomSheetDialogFragment() {
             val directions = VariationBottomSheetDirections.actionVariationBottomSheetToUpdateVariationFragment(args.variation,args.productID)
             findNavController().navigate(directions)
         }
+
         binding.actionDelete.setOnClickListener {
             MaterialAlertDialogBuilder(view.context)
                 .setTitle("Delete ")
@@ -63,7 +64,7 @@ class VariationBottomSheet : BottomSheetDialogFragment() {
     }
 
     private fun deleteAction() {
-        variationViewModel.deleteVariation(args.productID,args.variation.id,args.variation.image) {
+        variationViewModel.deleteVariation(args.productID,args.variation.id) {
             when(it) {
                 is UiState.FAILED -> {
                     loadingDialog.closeDialog()
@@ -76,6 +77,7 @@ class VariationBottomSheet : BottomSheetDialogFragment() {
                 is UiState.SUCCESS -> {
                     loadingDialog.closeDialog()
                     Toast.makeText(binding.root.context,it.data,Toast.LENGTH_SHORT).show()
+                    dismiss()
                 }
             }
         }

@@ -1,6 +1,7 @@
 package com.ketchupzz.francingsfootwearadmin.repository.auth
 
 import android.net.Uri
+import android.util.Log
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
@@ -14,9 +15,9 @@ import com.ketchupzz.francingsfootwearadmin.model.Users
 import java.util.UUID
 const val USER_COLLECTION = "admin";
 class AuthRepositoryImpl(private  val firestore : FirebaseFirestore, private  val auth : FirebaseAuth, private val storage: FirebaseStorage) : AuthRepository {
-    override fun login(email: String, password: String, result: (UiState<FirebaseUser>) -> Unit) {
+    override fun login(username: String, password: String, result: (UiState<FirebaseUser>) -> Unit) {
         result.invoke(UiState.LOADING)
-        auth.signInWithEmailAndPassword(email, password)
+        auth.signInWithEmailAndPassword(username, password)
             .addOnCompleteListener { signInTask ->
                 if (signInTask.isSuccessful) {
                     val user = signInTask.result?.user
@@ -26,10 +27,12 @@ class AuthRepositoryImpl(private  val firestore : FirebaseFirestore, private  va
                         result.invoke(UiState.FAILED("User not found!"))
                     }
                 } else {
+
                     result.invoke(UiState.FAILED("Failed to log in: ${signInTask.exception?.message}"))
                 }
             }
             .addOnFailureListener { signInException ->
+
                 result.invoke(UiState.FAILED("Failed to log in: ${signInException.message}"))
             }
     }

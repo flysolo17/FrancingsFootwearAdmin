@@ -9,7 +9,7 @@ class Variation(
     var id: String = "",
     var image : String = "",
     val name: String = "",
-    val sizes: MutableList<Size> = mutableListOf(),
+    var sizes: MutableList<Size> = mutableListOf(),
 ) : Parcelable {
     @Exclude
     fun getEffectiveVariationPrice(): String {

@@ -36,29 +36,20 @@ class VariationRepositoryImpl(private val firestore: FirebaseFirestore,private v
     override fun deleteVariation(
         productID: String,
         variationID: String,
-        imageURL : String,
         result: (UiState<String>) -> Unit
     ) {
         result.invoke(UiState.LOADING)
-        storage
-            .reference
-            .child(imageURL)
+        firestore.collection(PRODUCT_COLLECTION)
+            .document(productID)
+            .collection(VARIATION_SUB_COLLECTION)
+            .document(variationID)
             .delete()
-            .addOnSuccessListener {
-                firestore.collection(PRODUCT_COLLECTION)
-                    .document(productID)
-                    .collection(VARIATION_SUB_COLLECTION)
-                    .document(variationID)
-                    .delete()
-                    .addOnCompleteListener {
-                        if (it.isSuccessful) {
-                            result.invoke(UiState.SUCCESS("Successfully Deleted!"))
-                        } else {
-                            result.invoke(UiState.FAILED("Failed deleting variation!"))
-                        }
-                    }.addOnFailureListener {
-                        result.invoke(UiState.FAILED(it.message.toString()))
-                    }
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
+                    result.invoke(UiState.SUCCESS("Successfully Deleted!"))
+                } else {
+                    result.invoke(UiState.FAILED("Failed deleting variation!"))
+                }
             }.addOnFailureListener {
                 result.invoke(UiState.FAILED(it.message.toString()))
             }

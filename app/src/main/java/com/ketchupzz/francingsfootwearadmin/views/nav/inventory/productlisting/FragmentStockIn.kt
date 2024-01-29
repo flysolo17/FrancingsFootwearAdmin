@@ -11,6 +11,8 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 import com.ketchupzz.francingsfootwearadmin.utils.LoadingDialog
 import com.ketchupzz.francingsfootwearadmin.R
 import com.ketchupzz.francingsfootwearadmin.databinding.FragmentStockInBinding
@@ -30,8 +32,8 @@ class FragmentStockIn : Fragment() {
     ): View? {
         binding = FragmentStockInBinding.inflate(inflater,container,false)
         loadingDialog = LoadingDialog(binding.root.context)
-        args.variation.sizes.forEach {
-            addTextViewToRow(it)
+        args.variation.sizes.mapIndexed { index, size ->
+            displaySizeStocks(index, size = size)
         }
         return binding.root
     }
@@ -40,8 +42,40 @@ class FragmentStockIn : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.buttonSaveNewStocks.setOnClickListener {
+            val newStocksMap = mutableMapOf<String, Int>()
+            for (i in 0 until binding.layoutSizes.childCount) {
+                val view = binding.layoutSizes.getChildAt(i)
+                if (view is ViewGroup) {
+                    val textName = view.findViewById<TextView>(R.id.textName)
+                    val inputStocks = view.findViewById<TextInputEditText>(R.id.inputStocks)
+                    val sizeName = textName.text.toString()
+                    val stocks = inputStocks.text.toString().toIntOrNull() ?: 0
+                    newStocksMap[sizeName] = stocks
+                    args.variation.sizes = args.variation.sizes.map { size ->
+                        if (sizeName == size.size) {
+                            size.copy(stock = size.stock + stocks)
+                        } else {
+                            size
+                        }
+                    }.toMutableList()
 
+                }
+            }
+
+           goStockIn(args.productID,args.variation.id,args.variation.sizes)
+        }
     }
+
+    private fun displaySizeStocks(position : Int,size : Size) {
+        val view : View = LayoutInflater.from(binding.root.context).inflate(R.layout.row_stock_in,null)
+        val textname : TextView = view.findViewById(R.id.textName)
+        val inputStocks: TextInputEditText = view.findViewById(R.id.inputStocks)
+        val layoutStocks : TextInputLayout  = view.findViewById(R.id.layoutStocks)
+        textname.text = size.size
+        binding.layoutSizes.addView(view)
+    }
+
 
     private fun goStockIn(productID: String,variationID : String,size: List<Size>) {
         variationViewModel.stockIn(productID,variationID,size){
@@ -62,22 +96,6 @@ class FragmentStockIn : Fragment() {
         }
     }
 
-    private fun addTextViewToRow(size: Size) {
-        val view : View = LayoutInflater.from(binding.root.context).inflate(R.layout.row_sizes,null)
-        val textname : TextView = view.findViewById(R.id.textName)
-        val textcost : TextView = view.findViewById(R.id.textCost)
-        val textprice : TextView = view.findViewById(R.id.textPrice)
-        val textStocks: TextView = view.findViewById(R.id.textStocks)
-        val buttonDelete : MaterialButton = view.findViewById(R.id.buttonDelete)
-        textname.text = size.size
-        textcost.text = size.cost.toString()
-        textprice.text = size.price.toString()
-        textStocks.text = size.stock.toString()
-        buttonDelete.setOnClickListener {
-            binding.layoutSizes.removeView(view)
-        }
-        binding.layoutSizes.addView(view)
-    }
 
     private fun isSizeAlreadyExists(newSize: Size): Boolean {
         for (existingSize in args.variation.sizes) {
