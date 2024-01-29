@@ -40,6 +40,12 @@
         <action
             android:id="@+id/action_navigation_account_to_changePasswordFragment"
             app:destination="@id/changePasswordFragment" />
+        <action
+            android:id="@+id/action_navigation_account_to_privacyFragment"
+            app:destination="@id/privacyFragment" />
+        <action
+            android:id="@+id/action_navigation_account_to_termsFragment"
+            app:destination="@id/termsFragment" />
     </fragment>
     <fragment
         android:id="@+id/changePasswordFragment"
@@ -207,4 +213,14 @@
             android:name="transactions"
             app:argType="com.ketchupzz.francingsfootwearadmin.model.transaction.Transactions" />
     </fragment>
+    <fragment
+        android:id="@+id/termsFragment"
+        android:name="com.ketchupzz.francingsfootwearadmin.views.auth.TermsFragment"
+        android:label="fragment_terms"
+        tools:layout="@layout/fragment_terms" />
+    <fragment
+        android:id="@+id/privacyFragment"
+        android:name="com.ketchupzz.francingsfootwearadmin.views.auth.PrivacyFragment"
+        android:label="fragment_privacy"
+        tools:layout="@layout/fragment_privacy" />
 </navigation>
